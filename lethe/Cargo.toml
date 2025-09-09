@@ -30,6 +30,7 @@ plist = "1"
 serde = "1"
 serde_derive = "1"
 libc = "0.2"
+time = "=0.3.43"
 
 [target.'cfg(unix)'.dependencies]
 sysfs-class = "0.1.3"

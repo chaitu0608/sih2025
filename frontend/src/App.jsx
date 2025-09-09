@@ -53,23 +53,23 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <header className="bg-nb-accent border-b-3 border-black shadow-nb">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-danger-600 rounded-lg">
-                <Shield className="w-6 h-6 text-white" />
+              <div className="flex items-center justify-center w-10 h-10 bg-white border-3 border-black shadow-nb">
+                <Shield className="w-6 h-6 text-black" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">Lethe</h1>
-                <p className="text-sm text-gray-500">Secure Drive Wiping Utility</p>
+                <h1 className="text-xl font-extrabold drop-shadow-nb-text">Lethe</h1>
+                <p className="text-sm">Secure Drive Wiping Utility</p>
               </div>
             </div>
             
             <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <div className="flex items-center space-x-2 text-sm">
                 <Terminal className="w-4 h-4" />
                 <span>Linux System</span>
               </div>
@@ -96,41 +96,41 @@ function App() {
               currentStep === 'devices' ? 'text-blue-600' : 
               currentStep === 'configure' || currentStep === 'wipe' ? 'text-green-600' : 'text-gray-400'
             }`}>
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                currentStep === 'devices' ? 'bg-blue-600 text-white' :
-                currentStep === 'configure' || currentStep === 'wipe' ? 'bg-green-600 text-white' : 'bg-gray-200'
+              <div className={`w-8 h-8 flex items-center justify-center border-3 border-black shadow-nb ${
+                currentStep === 'devices' ? 'bg-nb-primary text-white' :
+                currentStep === 'configure' || currentStep === 'wipe' ? 'bg-green-500 text-black' : 'bg-white'
               }`}>
                 <HardDrive className="w-4 h-4" />
               </div>
               <span className="font-medium">Select Device</span>
             </div>
             
-            <div className={`w-16 h-0.5 ${
-              currentStep === 'configure' || currentStep === 'wipe' ? 'bg-green-600' : 'bg-gray-200'
+            <div className={`w-16 h-2 border-3 border-black ${
+              currentStep === 'configure' || currentStep === 'wipe' ? 'bg-green-500' : 'bg-white'
             }`} />
             
             <div className={`flex items-center space-x-2 ${
               currentStep === 'configure' ? 'text-blue-600' : 
               currentStep === 'wipe' ? 'text-green-600' : 'text-gray-400'
             }`}>
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                currentStep === 'configure' ? 'bg-blue-600 text-white' :
-                currentStep === 'wipe' ? 'bg-green-600 text-white' : 'bg-gray-200'
+              <div className={`w-8 h-8 flex items-center justify-center border-3 border-black shadow-nb ${
+                currentStep === 'configure' ? 'bg-nb-primary text-white' :
+                currentStep === 'wipe' ? 'bg-green-500 text-black' : 'bg-white'
               }`}>
                 <AlertTriangle className="w-4 h-4" />
               </div>
               <span className="font-medium">Configure</span>
             </div>
             
-            <div className={`w-16 h-0.5 ${
-              currentStep === 'wipe' ? 'bg-green-600' : 'bg-gray-200'
+            <div className={`w-16 h-2 border-3 border-black ${
+              currentStep === 'wipe' ? 'bg-green-500' : 'bg-white'
             }`} />
             
             <div className={`flex items-center space-x-2 ${
               currentStep === 'wipe' ? 'text-blue-600' : 'text-gray-400'
             }`}>
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                currentStep === 'wipe' ? 'bg-blue-600 text-white' : 'bg-gray-200'
+              <div className={`w-8 h-8 flex items-center justify-center border-3 border-black shadow-nb ${
+                currentStep === 'wipe' ? 'bg-nb-primary text-white' : 'bg-white'
               }`}>
                 <Zap className="w-4 h-4" />
               </div>
@@ -139,7 +139,7 @@ function App() {
           </div>
         </div>
 
-        {/* Step Content */}
+
         {currentStep === 'devices' && (
           <DeviceList
             devices={devices}
